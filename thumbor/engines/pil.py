@@ -132,6 +132,9 @@ class Engine(BaseEngine):
                     if self.context.config.PILLOW_JPEG_SUBSAMPLING:
                         options['subsampling'] = int(self.context.config.PILLOW_JPEG_SUBSAMPLING)
 
+            if self.context.config.PILLOW_JPEG_SUBSAMPLING:
+                options['subsampling'] = int(self.context.config.PILLOW_JPEG_SUBSAMPLING)
+
         if options['quality'] is None:
             options['quality'] = self.context.config.QUALITY
 
