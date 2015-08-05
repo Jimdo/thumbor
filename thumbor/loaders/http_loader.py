@@ -52,6 +52,8 @@ def return_contents(response, url, callback, context):
           for x in response.time_info:
               context.metrics.timing('original_image.time_info.' + x, response.time_info[x] * 1000)
           context.metrics.timing('original_image.time_info.bytes_per_second', len(response.body) / response.time_info['total'])
+        if response.headers['Last-Modified']
+            context.request_handler.set_header('Last-Modified', response.headers['Last-Modified'])
         callback(response.body)
 
 
