@@ -142,7 +142,9 @@ class Engine(BaseEngine):
 
                 if copy_jpg_settings and (subsampling is not None) and quantization and 2 <= len(quantization) <= 4:
                     options['quality'] = 0 # can't use 'keep' here as Pillow would try to extract qtables/subsampling and fail
-                    options['qtables'] = quantization
+                    # options['qtables'] = quantization
+                    options['qtables'] = "web_high" # overriding this - for testing, we have to clean up the options,
+                    # and ideally submit a PR for the thumbor project.
                     options['subsampling'] = subsampling
 
             if self.context.config.PILLOW_JPEG_SUBSAMPLING:
