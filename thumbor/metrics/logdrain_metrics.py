@@ -21,4 +21,4 @@ class Metrics(BaseMetrics):
     def timing(self, metricname, value):
         mappings = self.config.CUSTOM_TIMINGS_MAPPING
         if mappings.has_key(metricname):
-            print "logdrain-metrics source=logdrain-metrics sample#%s=%s" % (mappings.get(metricname), value)
+            print "logdrain-metrics source=logdrain-metrics sample#%s=%sms" % (mappings.get(metricname), value)
