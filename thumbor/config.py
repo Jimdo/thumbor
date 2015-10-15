@@ -75,11 +75,6 @@ Config.define(
     'METRICS', 'thumbor.metrics.logger_metrics',
     'The metrics backend thumbor should use to measure internal actions. This must be the full name of a python module ' +
     '(python must be able to import it)', 'Extensibility')
-
-Config.define(
-    'CUSTOM_TIMINGS_MAPPING', {},
-    "Mapping for exposing Metrics via Heroku Log-Drain", "Metrics")
-
 Config.define(
     'LOADER', 'thumbor.loaders.http_loader',
     'The loader thumbor should use to load the original image. This must be the full name of a python module ' +
